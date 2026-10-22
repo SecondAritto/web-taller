@@ -1,0 +1,222 @@
+/* ==================================================
+   VARIABLES I MODO CLAR / FOSC
+   ================================================== */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+    --header-bg: #ffffff;
+    --border-color: #bdc3c7;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #f4f4f4;
+    --card-bg: #2d2d2d;
+    --header-bg: #252525;
+    --border-color: #444444;
+}
+
+/* ==================================================
+   ESTILOS GENERALS I RESET
+   ================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Contenidor general per centrar seccions */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+
+/* ==================================================
+   ESTILOS DE LES TARGETES (<article>)
+   ================================================== */
+article {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+article h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+body.dark-mode article h3 {
+    color: #58d68d;
+}
+
+article p {
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+article img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    margin-top: 10px;
+}
+
+
+/* ==================================================
+   FLEXBOX: TARGETES EN HORITZONTAL (.cards-grid)
+   ================================================== */
+.cards-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cards-grid article {
+    flex: 1;
+    min-width: 280px;
+    margin-bottom: 0;
+}
+
+
+/* ==================================================
+   ESTILOS DEL FORMULARI I PSEUDOCLASES
+   ================================================== */
+#solicitud input,
+#solicitud select,
+#solicitud textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    margin-top: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+/* 1. :required - Destaca els camps obligatoris */
+#solicitud input:required,
+#solicitud select:required,
+#solicitud textarea:required {
+    border-left: 4px solid #fd0782; 
+}
+
+/* 2. :focus - Canvia l'aspecte en fer clic o navegar amb Tab */
+#solicitud input:focus,
+#solicitud select:focus,
+#solicitud textarea:focus {
+    outline: none;
+    border-color: #2ecc71;
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.3);
+}
+
+/* Botó d'enviament */
+#solicitud button[type="submit"] {
+    background-color: #2ecc71;
+    color: #ffffff;
+    padding: 14px 20px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#solicitud button[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+
+/* ==================================================
+   MENÚ DE NAVEGACIÓ EN EL HEADER
+   ================================================== */
+.site-header {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+.site-header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.site-header h1 {
+    color: var(--text-color);
+}
+
+.site-header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-header nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.site-header nav ul li a:hover {
+    color: #2ecc71;
+}
+
+/* Botó de canvi de tema (requerit al Pas 1.2) */
+#btn-theme {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#btn-theme:hover {
+    background-color: #34495e;
+}
+
+.site-footer {
+    background-color: var(--header-bg);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    transition: background-color 0.3s ease;
+}

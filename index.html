@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Portal de solicitud de asistencia técnica">
+    <meta name="keywords" content="asistencia técnica, soporte, incidencias, ayuda">
+    <meta name="author" content="Paola">
+
+    <title>Portal de asistencia técnica</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-flex">
+            <h1>Portal de asistencia técnica</h1>
+
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#averias">Averías frecuentes</a></li>
+                    <li><a href="#solicitud">Solicitar asistencia</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botón para el modo claro/oscuro -->
+            <button id="btn-theme">🌓 Tema</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- INICIO -->
+        <section id="inicio">
+            <div class="container">
+                <h2>Bienvenido/a al portal de soporte</h2>
+                <p>
+                    Envíanos tu incidencia y nuestro equipo
+                    de asistencia técnica te ayudará.
+                </p>
+            </div>
+        </section>
+
+        <!-- SERVICIOS Y RECURSOS -->
+        <section id="servicios">
+            <div class="container">
+                <h2>Nuestros servicios y recursos</h2>
+                <div class="cards-grid">
+                    <article>
+                        <h3>Mantenimiento informático</h3>
+                        <p>
+                            Realizamos tareas de mantenimiento para mejorar
+                            el funcionamiento y la seguridad de los equipos.
+                        </p>
+                        <img src="assets/img/manteniment.jpg" alt="Mantenimiento de un equipo informático">
+                    </article>
+
+                    <article>
+                        <h3>Problemas con la conexión a Internet</h3>
+                        <p>
+                            Comprueba que el router esté encendido.
+                            También puedes reiniciarlo y comprobar si otros
+                            dispositivos tienen conexión.
+                        </p>
+                        <img src="assets/img/xarxes.jpg" alt="Redes informáticas y conexión a Internet">
+                    </article>
+
+                    <article>
+                        <h3>Malware y amenazas informáticas</h3>
+                        <p>
+                            El malware puede afectar al funcionamiento de un
+                            equipo y poner en riesgo la información almacenada.
+                            Evita abrir archivos sospechosos.
+                        </p>
+                        <img src="assets/img/malware.jpg" alt="Ilustración sobre malware y seguridad informática">
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVERÍAS FRECUENTES -->
+        <section id="averias">
+            <div class="container">
+                <h2>Averías más frecuentes</h2>
+                <article>
+                    <h3>El ordenador no enciende</h3>
+                    <p>
+                        Comprueba que el cable de alimentación esté
+                        conectado correctamente y que el enchufe funcione.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>El ordenador funciona muy lento</h3>
+                    <p>
+                        Cierra los programas que no estés utilizando
+                        y comprueba que tengas suficiente espacio
+                        disponible en el disco.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>La impresora no imprime</h3>
+                    <p>
+                        Comprueba que la impresora esté encendida,
+                        conectada correctamente y que tenga papel y tinta.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SOLICITUD DE ASISTENCIA -->
+        <section id="solicitud">
+            <div class="container">
+                <h2>Solicitud de asistencia técnica</h2>
+
+                <!-- Añadido id="incident-form" y novalidate para gestionar los errores con JS -->
+                <form id="incident-form" action="#" method="post" novalidate>
+
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre">
+                        <div id="error-name" class="error-message">Por favor, introduce tu nombre.</div>
+                    </div>
+
+                    <div>
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo">
+                    </div>
+
+                    <div>
+                        <label for="asunto">Asunto:</label>
+                        <input type="text" id="asunto" name="asunto">
+                    </div>
+
+                    <div>
+                        <label for="tipo">Tipo de incidencia:</label>
+                        <select id="tipo" name="tipo">
+                            <option value="">Selecciona una opción</option>
+                            <option value="hardware">Hardware</option>
+                            <option value="software">Software</option>
+                            <option value="red">Red</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="descripcion">Descripción de la incidencia:</label>
+                        <textarea id="descripcion" name="descripcion" rows="6"></textarea>
+                        <div id="error-desc" class="error-message">La descripción debe tener al menos 10 caracteres.</div>
+                    </div>
+
+                    <button type="submit">Enviar solicitud</button>
+
+                </form>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p>
+                    Si necesitas más información, ponte en contacto
+                    con nuestro equipo de soporte.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>
+                    © 2026 Portal de asistencia técnica.
+                    Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
